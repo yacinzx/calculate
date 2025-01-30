@@ -5,6 +5,7 @@ body {
     backdrop-filter: mask;
     background-image: url(01.gif);
     background-size: cover;
+    backgrount-position: center;
     background-repeat: no-repeat;
     text-align: center;
     
