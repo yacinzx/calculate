@@ -207,10 +207,6 @@ body {
     align-items: center;
     position: relative;
     transition: all 0.3s ease;
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 body::before {
@@ -284,54 +280,23 @@ body.light-mode td {
     color: #ffffff;
 }
 
-/* Input styling */
 input[type="number"] {
-    width: 60px;
-    padding: 0.3rem;
-    border: none;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-dark);
     font-weight: 500;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 18px;
-    font-size: 0.9rem;
 }
 
-input[type="number"]:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+body.light-mode input[type="number"] {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .coef-input {
     width: 40px;
     text-align: center;
     height: 18px;
-}
-
-body.light-mode input[type="number"] {
-    background: rgba(255, 255, 255, 0.3);
-    color: var(--text-dark);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-body.light-mode input[type="number"]:focus {
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Remove number input spinners */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
 }
 
 button {
@@ -388,100 +353,37 @@ body.light-mode footer {
 .nm {
     font-size: 1.1rem;
     font-weight: 600;
-    position: relative;
-    padding: 0.5rem;
-}
-
-.nm span {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px 15px;
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    display: inline-block;
-    min-width: 45px;
-}
-
-/* Success/Error colors for grades */
-span[id^="note-"] {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-span[id^="note-"]:not(:empty) {
-    animation: fadeIn 0.5s ease;
-}
-
-span[id^="note-"][style*="green"] {
-    background: rgba(16, 185, 129, 0.2);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    color: #10FFB0;
-}
-
-span[id^="note-"][style*="red"] {
-    background: rgba(239, 68, 68, 0.2);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    color: #FF6B6B;
-}
-
-/* Final result styling */
-.last {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .moy {
-    font-size: 1.2rem;
+    background: linear-gradient(45deg, rgba(255, 28, 247, 0.2), rgba(0, 240, 255, 0.2));
+    font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: linear-gradient(45deg, rgba(255, 28, 247, 0.2), rgba(0, 240, 255, 0.2));
+    color: #ffffff;
+}
+
+body.light-mode .moy {
+    background: linear-gradient(45deg, rgba(0, 240, 255, 0.2), rgba(255, 28, 247, 0.2));
+}
+
+.last {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.last th {
+    background: transparent;
+    font-size: 1.1rem;
+    padding: 0.8rem;
 }
 
 #moyenne-generale {
-    font-size: 1.4rem;
-    font-weight: 800;
-    padding: 8px 20px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    display: inline-block;
-    min-width: 60px;
-    position: relative;
-    overflow: hidden;
-}
-
-#moyenne-generale::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
-    transition: 0.5s;
-}
-
-#moyenne-generale:not(:empty)::before {
-    animation: shine 2s infinite;
-}
-
-/* Animation for shine effect */
-@keyframes shine {
-    0% {
-        left: -100%;
-    }
-    20% {
-        left: 100%;
-    }
-    100% {
-        left: 100%;
-    }
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Animations */
@@ -519,7 +421,6 @@ span[id^="note-"][style*="red"] {
     input[type="number"] {
         width: 50px;
         height: 16px;
-        font-size: 0.85rem;
     }
 
     .coef-input {
@@ -559,7 +460,6 @@ span[id^="note-"][style*="red"] {
     input[type="number"] {
         width: 40px;
         height: 14px;
-        font-size: 0.8rem;
         padding: 0.2rem;
     }
 
@@ -596,83 +496,43 @@ span[id^="note-"][style*="red"] {
     }
 }
 
-/* Theme toggle button */
+/* Remove number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+body.light-mode input[type="number"] {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .theme-toggle {
     position: fixed;
-    bottom: 80px; /* Position above footer */
+    top: 20px;
     right: 20px;
-    width: 45px;
-    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.theme-toggle i {
     font-size: 1.2rem;
-    color: #ffffff;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
     transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.theme-toggle:active {
-    transform: scale(0.95);
-}
-
-body.light-mode .theme-toggle {
-    background: rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-body.light-mode .theme-toggle i {
-    color: #ffffff;
-}
-
-/* Responsive adjustments for theme toggle */
-@media (max-width: 768px) {
-    .theme-toggle {
-        bottom: 70px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .theme-toggle i {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .theme-toggle {
-        bottom: 65px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-    }
-    
-    .theme-toggle i {
-        font-size: 1rem;
-    }
-}
-
-/* For very small screens */
-@media (max-height: 600px) {
-    .theme-toggle {
-        bottom: 60px;
-    }
 }
 
 /* Success/Error colors for grades */
@@ -684,96 +544,6 @@ body.light-mode .theme-toggle i {
 .error-grade {
     color: #c22200 !important;
     text-shadow: 0 0 10px rgba(194, 34, 0, 0.3);
-}
-
-/* Module names styling */
-td:first-child {
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    padding: 0.8rem 1rem;
-    min-width: 100px;
-}
-
-body.light-mode td:first-child {
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    td:first-child {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.8rem;
-        min-width: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    td:first-child {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.6rem;
-        min-width: 60px;
-    }
-}
-
-/* Hide scrollbar but keep functionality */
-::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-}
-
-/* Hide scrollbar for Firefox */
-* {
-    scrollbar-width: none;
-}
-
-/* Hide scrollbar for IE */
-* {
-    -ms-overflow-style: none;
-}
-
-body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0.5rem 0;
-    margin-bottom: 60px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/* Table container to prevent overflow */
-.table-container {
-    width: 100%;
-    overflow-x: hidden;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-table {
-    margin: 0.3rem auto;
-    width: 98%;
-    max-width: 1000px;
-    box-sizing: border-box;
 }
 
   
