@@ -200,15 +200,17 @@ body.light-mode footer {
 /* Dark mode (default) */
 body {
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    height: 100vh; /* Force full height */
     margin: 0;
     padding: 0;
-    min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--light);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 body::before {
@@ -234,17 +236,29 @@ header {
     text-align: center;
 }
 
+/* Container for main content */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0;
+    overflow: hidden;
+}
+
 /* Table and content styling improvements */
 table {
+    flex: 1;
     width: 95%;
     max-width: 1000px;
-    margin: 1rem auto;
+    margin: 0.3rem auto;
     border-collapse: separate;
     border-spacing: 0;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     overflow: hidden;
+    height: calc(100vh - 180px); /* Adjust based on header + footer + button height */
 }
 
 th, td {
@@ -737,6 +751,175 @@ td, th {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Mobile-first responsive adjustments */
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 1.1rem;
+        padding: 0.4rem;
+        height: auto;
+    }
+
+    table {
+        width: 98%;
+        font-size: 0.75rem;
+        margin: 0.2rem auto;
+    }
+
+    th, td {
+        padding: 0.15rem 0.2rem;
+        height: auto;
+    }
+
+    /* Module names */
+    td:first-child {
+        font-size: 0.7rem;
+        padding: 0.15rem;
+        min-width: 45px;
+    }
+
+    /* Input fields */
+    input[type="number"] {
+        width: 32px;
+        height: 14px;
+        padding: 0.15rem;
+        font-size: 0.7rem;
+        border-radius: 12px;
+    }
+
+    .coef-input {
+        width: 25px;
+        height: 14px;
+    }
+
+    /* Results */
+    .nm span {
+        min-width: 25px;
+        padding: 2px 6px;
+        font-size: 0.75rem;
+    }
+
+    /* Final result */
+    #moyenne-generale {
+        font-size: 1rem;
+        padding: 5px 12px;
+        min-width: 40px;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+        width: 32px;
+        height: 32px;
+        bottom: 50px;
+    }
+
+    .theme-toggle i {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 5px 0;
+        height: auto;
+    }
+
+    /* Button */
+    button {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+        margin: 0.3rem auto 2.8rem auto;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 320px) {
+    header {
+        font-size: 1rem;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    input[type="number"] {
+        width: 30px;
+        height: 12px;
+        font-size: 0.7rem;
+    }
+
+    .coef-input {
+        width: 22px;
+        height: 12px;
+    }
+
+    td:first-child {
+        font-size: 0.7rem;
+        min-width: 40px;
+    }
+}
+
+/* Landscape mode */
+@media screen and (max-height: 480px) {
+    header {
+        padding: 0.3rem;
+    }
+
+    table {
+        margin: 0.3rem auto;
+    }
+
+    .theme-toggle {
+        bottom: 45px;
+    }
+
+    button {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Remove number input spinners for mobile */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Tall phones optimization */
+@media screen and (min-height: 700px) and (max-width: 480px) {
+    table {
+        height: calc(100vh - 200px);
+    }
+
+    th, td {
+        padding: 0.2rem;
+    }
+}
+
+/* Extra tall phones */
+@media screen and (min-height: 800px) and (max-width: 480px) {
+    table {
+        height: calc(100vh - 220px);
+    }
+
+    th, td {
+        padding: 0.25rem;
+    }
+}
+
+/* Very tall phones */
+@media screen and (min-height: 900px) and (max-width: 480px) {
+    table {
+        height: calc(100vh - 240px);
+    }
+
+    th, td {
+        padding: 0.3rem;
     }
 }
 

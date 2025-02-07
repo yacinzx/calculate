@@ -29,132 +29,134 @@
         <i class="fas fa-moon"></i>
     </button>
     
-    <table>
-        <thead>
-            <tr>
-                <th>Module</th>
-                <th>TD</th>
-                <th>TP</th>
-                <th>Exam</th>
-                <th>Coef</th>
-                <th>Note</th>
-            </tr>
-        </thead>
-        <tbody id="notes-body">
-            <tr>
-                <td>ALGO</td>
-                <td><input type="number" id="td-algo" min="0" max="20"></td>
-                <td><input type="number" id="tp-algo" min="0" max="20"></td>
-                <td><input type="number" id="exam-algo" min="0" max="20"></td>
-                <td><input type="number" id="coef-algo" min="1" max="10" value="5" class="coef-input"></td>
-                <td class="nm"><span id="note-algo">-</span></td>
-            </tr>
-            <tr>
-                <td>ALGEBRE</td>
-                <td><input type="number" id="td-alg" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-alg" min="0" max="20"></td>
-                <td><input type="number" id="coef-alg" min="1" max="10" value="3" class="coef-input"></td>
-                <td class="nm"><span id="note-alg">-</span></td>
-            </tr>
-            <tr>
-                <td>ANALYSE</td>
-                <td><input type="number" id="td-anal" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-anal" min="0" max="20"></td>
-                <td><input type="number" id="coef-anal" min="1" max="10" value="5" class="coef-input"></td>
-                <td class="nm"><span id="note-anal">-</span></td>
-            </tr>
-            <tr>
-                <td>STRM</td>
-                <td><input type="number" id="td-strm" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-strm" min="0" max="20"></td>
-                <td><input type="number" id="coef-strm" min="1" max="10" value="3" class="coef-input"></td>
-                <td class="nm"><span id="note-strm">-</span></td>
-            </tr>
-            <tr>
-                <td>MP</td>
-                <td><input type="number" id="td-mp" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-mp" min="0" max="20"></td>
-                <td><input type="number" id="coef-mp" min="1" max="10" value="2" class="coef-input"></td>
-                <td class="nm"><span id="note-mp">-</span></td>
-            </tr>
-            <tr>
-                <td>MECRO ECO</td>
-                <td><input type="number" id="td-me" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-me" min="0" max="20"></td>
-                <td><input type="number" id="coef-me" min="1" max="10" value="4" class="coef-input"></td>
-                <td class="nm"><span id="note-me">-</span></td>
-            </tr>
-            <tr>
-                <td>COMPTA</td>
-                <td><input type="number" id="td-compta" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-compta" min="0" max="20"></td>
-                <td><input type="number" id="coef-compta" min="1" max="10" value="4" class="coef-input"></td>
-                <td class="nm"><span id="note-compta">-</span></td>
-            </tr>
-            <tr>
-                <td>INTRO A ECO</td>
-                <td><input type="number" id="td-inte" min="0" max="20"></td>
-                <td>-</td>
-                <td><input type="number" id="exam-inte" min="0" max="20"></td>
-                <td><input type="number" id="coef-inte" min="1" max="10" value="4" class="coef-input"></td>
-                <td class="nm"><span id="note-inte">-</span></td>
-            </tr>
-            <tr>
-                <td>TEE</td>
-                <td>-</td>
-                <td>-</td>
-                <td><input type="number" id="exam-tee" min="0" max="20"></td>
-                <td><input type="number" id="coef-tee" min="1" max="10" value="1" class="coef-input"></td>
-                <td class="nm"><span id="note-tee">-</span></td>
-            </tr>
-            <tr>
-                <td>BUREAUTIQUE</td>
-                <td>-</td>
-                <td>-</td>
-                <td><input type="number" id="exam-btq" min="0" max="20"></td>
-                <td><input type="number" id="coef-btq" min="1" max="10" value="1" class="coef-input"></td>
-                <td class="nm"><span id="note-btq">-</span></td>
-            </tr>
-            <tr>
-                <td>INT A DROIT</td>
-                <td>-</td>
-                <td>-</td>
-                <td><input type="number" id="exam-intd" min="0" max="20"></td>
-                <td><input type="number" id="coef-intd" min="1" max="10" value="1" class="coef-input"></td>
-                <td class="nm"><span id="note-intd">-</span></td>
-            </tr>
-            
-            <tr>
-                <td>INT A SOCIOLOGIE</td>
-                <td>-</td>
-                <td>-</td>
-                <td><input type="number" id="exam-ints" min="0" max="20"></td>
-                <td><input type="number" id="coef-ints" min="1" max="10" value="1" class="coef-input"></td>
-                <td class="nm"><span id="note-ints">-</span></td>
-            </tr>
-            <tr>
-                <td>STAT</td>
-                <td>-</td>
-                <td>-</td>
-                <td><input type="number" id="exam-stat" min="0" max="20"></td>
-                <td><input type="number" id="coef-stat" min="1" max="10" value="3" class="coef-input"></td>
-                <td class="nm"><span id="note-stat">-</span></td>
-            </tr>
-            <tr class="last">
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>TD</th>
+                    <th>TP</th>
+                    <th>Exam</th>
+                    <th>Coef</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody id="notes-body">
+                <tr>
+                    <td>ALGO</td>
+                    <td><input type="number" id="td-algo" min="0" max="20"></td>
+                    <td><input type="number" id="tp-algo" min="0" max="20"></td>
+                    <td><input type="number" id="exam-algo" min="0" max="20"></td>
+                    <td><input type="number" id="coef-algo" min="1" max="10" value="5" class="coef-input"></td>
+                    <td class="nm"><span id="note-algo">-</span></td>
+                </tr>
+                <tr>
+                    <td>ALGEBRE</td>
+                    <td><input type="number" id="td-alg" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-alg" min="0" max="20"></td>
+                    <td><input type="number" id="coef-alg" min="1" max="10" value="3" class="coef-input"></td>
+                    <td class="nm"><span id="note-alg">-</span></td>
+                </tr>
+                <tr>
+                    <td>ANALYSE</td>
+                    <td><input type="number" id="td-anal" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-anal" min="0" max="20"></td>
+                    <td><input type="number" id="coef-anal" min="1" max="10" value="5" class="coef-input"></td>
+                    <td class="nm"><span id="note-anal">-</span></td>
+                </tr>
+                <tr>
+                    <td>STRM</td>
+                    <td><input type="number" id="td-strm" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-strm" min="0" max="20"></td>
+                    <td><input type="number" id="coef-strm" min="1" max="10" value="3" class="coef-input"></td>
+                    <td class="nm"><span id="note-strm">-</span></td>
+                </tr>
+                <tr>
+                    <td>MP</td>
+                    <td><input type="number" id="td-mp" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-mp" min="0" max="20"></td>
+                    <td><input type="number" id="coef-mp" min="1" max="10" value="2" class="coef-input"></td>
+                    <td class="nm"><span id="note-mp">-</span></td>
+                </tr>
+                <tr>
+                    <td>MECRO ECO</td>
+                    <td><input type="number" id="td-me" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-me" min="0" max="20"></td>
+                    <td><input type="number" id="coef-me" min="1" max="10" value="4" class="coef-input"></td>
+                    <td class="nm"><span id="note-me">-</span></td>
+                </tr>
+                <tr>
+                    <td>COMPTA</td>
+                    <td><input type="number" id="td-compta" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-compta" min="0" max="20"></td>
+                    <td><input type="number" id="coef-compta" min="1" max="10" value="4" class="coef-input"></td>
+                    <td class="nm"><span id="note-compta">-</span></td>
+                </tr>
+                <tr>
+                    <td>INTRO A ECO</td>
+                    <td><input type="number" id="td-inte" min="0" max="20"></td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-inte" min="0" max="20"></td>
+                    <td><input type="number" id="coef-inte" min="1" max="10" value="4" class="coef-input"></td>
+                    <td class="nm"><span id="note-inte">-</span></td>
+                </tr>
+                <tr>
+                    <td>TEE</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-tee" min="0" max="20"></td>
+                    <td><input type="number" id="coef-tee" min="1" max="10" value="1" class="coef-input"></td>
+                    <td class="nm"><span id="note-tee">-</span></td>
+                </tr>
+                <tr>
+                    <td>BUREAUTIQUE</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-btq" min="0" max="20"></td>
+                    <td><input type="number" id="coef-btq" min="1" max="10" value="1" class="coef-input"></td>
+                    <td class="nm"><span id="note-btq">-</span></td>
+                </tr>
+                <tr>
+                    <td>INT A DROIT</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-intd" min="0" max="20"></td>
+                    <td><input type="number" id="coef-intd" min="1" max="10" value="1" class="coef-input"></td>
+                    <td class="nm"><span id="note-intd">-</span></td>
+                </tr>
                 
-                <th class="moy" colspan="4">La Moyenne Generale </th>
-                <th>30</th>
-                <th><span id="moyenne-generale">-</span></th>
-            </tr>
-        </tbody>
-    </table>
-    <button onclick="calculerNotes()">Calculer La Moyenne</button>
+                <tr>
+                    <td>INT A SOCIOLOGIE</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-ints" min="0" max="20"></td>
+                    <td><input type="number" id="coef-ints" min="1" max="10" value="1" class="coef-input"></td>
+                    <td class="nm"><span id="note-ints">-</span></td>
+                </tr>
+                <tr>
+                    <td>STAT</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><input type="number" id="exam-stat" min="0" max="20"></td>
+                    <td><input type="number" id="coef-stat" min="1" max="10" value="3" class="coef-input"></td>
+                    <td class="nm"><span id="note-stat">-</span></td>
+                </tr>
+                <tr class="last">
+                    
+                    <th class="moy" colspan="4">La Moyenne Generale </th>
+                    <th>30</th>
+                    <th><span id="moyenne-generale">-</span></th>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="calculerNotes()">Calculer La Moyenne</button>
+    </div>
     <footer>
         <div class="social-icons">
             <span>Created by ©Yacinz ❤️</span>
