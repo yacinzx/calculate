@@ -234,69 +234,162 @@ header {
 
 /* Table and content styling improvements */
 table {
-    width: 95%;
+    margin: 0.3rem auto;
+    width: 98%;
     max-width: 1000px;
-    margin: 1rem auto;
     border-collapse: separate;
     border-spacing: 0;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-th {
+th, td {
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Module names (first column) */
+td:first-child {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Results centering */
+.nm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.nm span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    padding: 0.3rem 0.8rem;
     background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Input container centering */
+td > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Input centering */
+input[type="number"] {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Final average row */
+.moy {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1rem;
-    color: #ffffff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    padding: 0.8rem;
+    background: linear-gradient(45deg, rgba(255, 28, 247, 0.2), rgba(0, 240, 255, 0.2));
 }
 
-body.light-mode table {
+#moyenne-generale {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding: 0.4rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 800;
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-body.light-mode th {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+    td:first-child {
+        font-size: 0.8rem;
+    }
+
+    .nm span {
+        min-width: 40px;
+        padding: 0.2rem 0.6rem;
+    }
+
+    #moyenne-generale {
+        min-width: 50px;
+        padding: 0.3rem 0.8rem;
+        font-size: 1rem;
+    }
 }
 
-td {
-    padding: 0.8rem;
-    color: #ffffff;
-    font-weight: 500;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode td {
-    color: #ffffff;
-}
-
+/* Modern input styling */
 input[type="number"] {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-dark);
+    width: 70px;
+    height: 35px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
     font-weight: 500;
-}
-
-body.light-mode input[type="number"] {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .coef-input {
-    width: 40px;
-    text-align: center;
-    height: 18px;
+    width: 50px;
+    height: 35px;
+}
+
+/* Input focus state */
+input[type="number"]:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode input adjustments */
+body.light-mode input[type="number"] {
+    background: rgba(255, 255, 255, 0.3);
+    color: #1E293B;
+}
+
+body.light-mode input[type="number"]:focus {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile optimizations for inputs */
+@media screen and (max-width: 480px) {
+    input[type="number"] {
+        width: 55px;
+        height: 30px;
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .coef-input {
+        width: 40px;
+        height: 30px;
+    }
 }
 
 button {
@@ -537,13 +630,11 @@ body.light-mode input[type="number"] {
 
 /* Success/Error colors for grades */
 .success-grade {
-    color: #6de701 !important;
-    text-shadow: 0 0 10px rgba(109, 231, 1, 0.3);
+    color: var(--success) !important;
 }
 
 .error-grade {
-    color: #c22200 !important;
-    text-shadow: 0 0 10px rgba(194, 34, 0, 0.3);
+    color: var(--error) !important;
 }
 
   
