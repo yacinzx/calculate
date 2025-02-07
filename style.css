@@ -247,7 +247,7 @@ table {
 }
 
 th, td {
-    padding: 0.8rem 0.5rem;
+    padding: clamp(0.3rem, 2vw, 0.8rem) clamp(0.2rem, 1vw, 0.5rem);
     text-align: center;
     vertical-align: middle;
 }
@@ -257,7 +257,7 @@ td:first-child {
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
 }
 
 /* Results centering */
@@ -265,15 +265,15 @@ td:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
+    padding: clamp(0.2rem, 1vw, 0.5rem);
 }
 
 .nm span {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    min-width: 50px;
-    padding: 0.3rem 0.8rem;
+    min-width: clamp(40px, 8vw, 50px);
+    padding: clamp(0.2rem, 1vw, 0.3rem) clamp(0.4rem, 2vw, 0.8rem);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -307,9 +307,9 @@ input[type="number"] {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    min-width: 60px;
-    padding: 0.4rem 1rem;
-    font-size: 1.1rem;
+    min-width: clamp(50px, 12vw, 60px);
+    padding: clamp(0.3rem, 1.5vw, 0.4rem) clamp(0.6rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     font-weight: 800;
     background: rgba(255, 255, 255, 0.15);
     border-radius: 25px;
@@ -337,27 +337,22 @@ input[type="number"] {
 
 /* Modern input styling */
 input[type="number"] {
-    width: 70px;
-    height: 35px;
-    padding: 0.5rem;
-    border: none;
+    width: clamp(45px, 10vw, 70px);
+    height: clamp(25px, 5vw, 35px);
+    padding: clamp(0.2rem, 1vw, 0.5rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     border-radius: 25px;
+    border: none;
     background: rgba(255, 255, 255, 0.2);
     color: white;
     text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    transition: all 0.3s ease;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .coef-input {
-    width: 50px;
-    height: 35px;
+    width: clamp(35px, 8vw, 50px);
 }
 
 /* Input focus state */
@@ -635,6 +630,158 @@ body.light-mode input[type="number"] {
 
 .error-grade {
     color: var(--error) !important;
+}
+
+/* Universal centering */
+table, th, td, .nm, input[type="number"], .moy {
+    text-align: center;
+}
+
+/* Screen size specific adjustments */
+/* Extra small devices */
+@media screen and (max-width: 320px) {
+    td:first-child {
+        font-size: 0.65rem;
+    }
+    
+    input[type="number"] {
+        width: 40px;
+        height: 25px;
+        font-size: 0.75rem;
+    }
+    
+    .coef-input {
+        width: 30px;
+    }
+    
+    .nm span {
+        min-width: 35px;
+        padding: 0.15rem 0.4rem;
+    }
+}
+
+/* Small devices */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    td:first-child {
+        font-size: 0.75rem;
+    }
+    
+    input[type="number"] {
+        width: 45px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+    
+    .coef-input {
+        width: 35px;
+    }
+}
+
+/* Medium devices */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    td:first-child {
+        font-size: 0.8rem;
+    }
+    
+    input[type="number"] {
+        width: 55px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+    
+    .coef-input {
+        width: 40px;
+    }
+}
+
+/* Large devices */
+@media screen and (min-width: 769px) {
+    td:first-child {
+        font-size: 0.9rem;
+    }
+    
+    input[type="number"] {
+        width: 70px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .coef-input {
+        width: 50px;
+    }
+}
+
+/* Height-based adjustments */
+@media screen and (max-height: 600px) {
+    th, td {
+        padding: 0.2rem;
+    }
+    
+    input[type="number"] {
+        height: 25px;
+    }
+}
+
+/* Landscape mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    th, td {
+        padding: 0.15rem;
+    }
+    
+    input[type="number"] {
+        height: 25px;
+    }
+    
+    .nm span {
+        padding: 0.15rem 0.4rem;
+    }
+}
+
+/* Tall screen specific adjustments */
+@media screen and (min-height: 700px) {
+    input[type="number"] {
+        border-radius: 30px;
+        height: 40px;
+    }
+    
+    .coef-input {
+        border-radius: 30px;
+        height: 40px;
+    }
+}
+
+/* Extra tall screens */
+@media screen and (min-height: 800px) {
+    input[type="number"] {
+        border-radius: 35px;
+        height: 45px;
+    }
+    
+    .coef-input {
+        border-radius: 35px;
+        height: 45px;
+    }
+}
+
+/* Super tall screens */
+@media screen and (min-height: 900px) {
+    input[type="number"] {
+        border-radius: 40px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .coef-input {
+        border-radius: 40px;
+        height: 50px;
+    }
+}
+
+/* Maintain proper spacing */
+@media screen and (min-height: 700px) {
+    td {
+        padding: 1rem 0.5rem;
+    }
 }
 
   
